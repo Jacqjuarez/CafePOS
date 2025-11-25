@@ -1,0 +1,10 @@
+
+<h2>Receipt</h2>
+{% for item, qty in order.items() %}
+    <p>{{item}} x {{qty}} = ${{ menu[item].price * qty }}</p>
+{% endfor %}
+<p><strong>Subtotal:</strong> ${{subtotal}}</p>
+<p><strong>Tax:</strong> ${{tax}}</p>
+<p><strong>Total:</strong> ${{total}}</p>
+
+<a href="/server">Back to Dashboard</a>

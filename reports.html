@@ -1,0 +1,11 @@
+
+<h2>Sales Report</h2>
+
+<h3>Total Revenue: ${{total_revenue}}</h3>
+
+<h3>Items Sold</h3>
+{% for item, qty in item_totals.items() %}
+    <p>{{item}} — {{qty}}</p>
+{% endfor %}
+
+<a href='/admin'>Back</a>

@@ -1,0 +1,15 @@
+
+<h2>Login</h2>
+<form method='POST'>
+    <label>Username</label><br>
+    <input name='username'><br><br>
+
+    <label>Password</label><br>
+    <input name='password' type='password'><br><br>
+
+    <button>Login</button>
+
+    {% if error %}
+    <p style="color:red">{{error}}</p>
+    {% endif %}
+</form>

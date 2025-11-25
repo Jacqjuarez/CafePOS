@@ -1,0 +1,22 @@
+
+<h2>Inventory Management</h2>
+<form method='POST'>
+    <label>Item:</label>
+    <select name='item'>
+        {% for item in menu %}
+        <option value="{{item}}">{{item}}</option>
+        {% endfor %}
+    </select>
+
+    <label>Amount to add:</label>
+    <input type='number' name='amount' min='1'>
+
+    <button>Add Stock</button>
+</form>
+
+<h3>Current Stock</h3>
+{% for item, info in menu.items() %}
+    <p>{{item}}: {{info.stock}}</p>
+{% endfor %}
+
+<a href='/admin'>Back</a>

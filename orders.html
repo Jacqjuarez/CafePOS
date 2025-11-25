@@ -1,0 +1,21 @@
+
+<h2>All Orders</h2>
+
+{% if sales %}
+    {% for sale in sales %}
+        <p>
+            <strong>Order Time:</strong> {{ sale.time.strftime("%Y-%m-%d %H:%M") }}<br>
+            <strong>Items:</strong><br>
+            <ul>
+            {% for item, qty in sale.items.items() %}
+                <li>{{item}} x {{qty}}</li>
+            {% endfor %}
+            </ul>
+            <strong>Total:</strong> ${{ sale.total }}<br><br>
+        </p>
+    {% endfor %}
+{% else %}
+    <p>No orders recorded yet.</p>
+{% endif %}
+
+<a href='/admin'>Back</a>
